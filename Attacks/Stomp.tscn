@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://gfx/stomp2.png" type="Texture" id=1]
+[ext_resource path="res://gfx/stomp1.png" type="Texture" id=2]
+[ext_resource path="res://Attacks/Stomp.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 256.5
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Stomp" type="Area2D"]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+frame = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
