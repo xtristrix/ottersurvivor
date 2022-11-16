@@ -31,6 +31,10 @@ func _on_TemplateEnemyTimer_timeout():
 	spawn_template_enemy()
 
 
+func update_xp(add_xp):
+	xp += add_xp
+
+
 func _on_CountdownTimer_timeout():
 	print("timeout")
 
