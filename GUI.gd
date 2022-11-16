@@ -24,5 +24,7 @@ func update_progressbar(max_xp, xp):
 func update_countdown(time_left):
 	var time_left_int = int(time_left)
 	var seconds = time_left_int % 60
+	if seconds < 10:
+		seconds = "0" + str(seconds)
 	var minutes = (time_left_int / 60)%60
 	$Control/lblCountdown.text = str(minutes) + ":" + str(seconds)
