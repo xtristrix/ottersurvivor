@@ -60,4 +60,10 @@ position = Vector2( 24, 968 )
 
 [node name="TemplateEnemyTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="CountdownTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
 [connection signal="timeout" from="TemplateEnemyTimer" to="." method="_on_TemplateEnemyTimer_timeout"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]

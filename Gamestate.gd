@@ -25,10 +25,14 @@ func _process(delta):
 func update_gui():
 	get_tree().call_group("GUI", "update_healthbar", max_health, health)
 	get_tree().call_group("GUI", "update_progressbar", next_level, xp)
-
+	get_tree().call_group("GUI", "update_countdown", $CountdownTimer.time_left)
 
 func _on_TemplateEnemyTimer_timeout():
 	spawn_template_enemy()
+
+
+func _on_CountdownTimer_timeout():
+	print("timeout")
 
 
 func spawn_template_enemy():
@@ -37,3 +41,5 @@ func spawn_template_enemy():
 	enemy_spawn_location.offset = randi()
 	enemy.position = enemy_spawn_location.position
 	add_child(enemy)
+
+
