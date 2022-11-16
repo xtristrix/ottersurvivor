@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Feep2.ogg-5f63bc32d022e3d5f302198a4f301488.oggstr"
+
+[deps]
+
+source_file="res://sfx/Feep2.ogg"
+dest_files=[ "res://.import/Feep2.ogg-5f63bc32d022e3d5f302198a4f301488.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
