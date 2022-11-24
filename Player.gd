@@ -5,8 +5,6 @@ export var speed = 200
 export var acceleration = 0.1
 export var friction = 0.1
 var velocity = Vector2()
-var next_level = 100
-var level = 1
 
 
 func _physics_process(delta):

@@ -14,11 +14,12 @@ func _ready():
 func update_healthbar(health_max, health):
 	$Control/HealthBar.max_value = health_max
 	$Control/HealthBar.value = health
-
+	$Control/LblHealth.text = str(health) + "/" + str(health_max) 
 
 func update_progressbar(max_xp, xp):
 	$Control/ProgressBar.max_value = max_xp
 	$Control/ProgressBar.value = xp
+	$Control/LblProgress.text = str(xp) + "/" + str(max_xp)
 
 
 func update_countdown(time_left):

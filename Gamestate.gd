@@ -20,6 +20,7 @@ func _ready():
 
 func _process(delta):
 	update_gui()
+	check_for_level_up()
 
 
 func update_gui():
@@ -33,6 +34,12 @@ func _on_TemplateEnemyTimer_timeout():
 
 func update_xp(add_xp):
 	xp += add_xp
+
+
+func check_for_level_up():
+	if xp >= next_level:
+		xp -= next_level
+		next_level = int(next_level * 1.1)
 
 
 func _on_CountdownTimer_timeout():

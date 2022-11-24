@@ -5,7 +5,7 @@ onready var player = get_parent().get_node("Player")
 var path_to_player = null
 export var speed = 100
 export var health = 100
-export var xp = 10
+export var xp = 20
 
 
 func _ready():
