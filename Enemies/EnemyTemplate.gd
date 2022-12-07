@@ -6,6 +6,7 @@ var path_to_player = null
 export var speed = 100
 export var health = 100
 export var xp = 20
+export var damage = 10
 
 
 func _ready():
@@ -30,6 +31,26 @@ func check_if_alive():
 	if health <= 0:
 		die()
 
+
 func die():
 	get_tree().call_group("Gamestate", "update_xp", xp)
 	queue_free()
+
+
+func _on_AttackArea_body_entered(body):
+	if body == player:
+		hurt_player()
+		$HurtTimer.start()
+
+
+func _on_AttackArea_body_exited(body):
+	if body == player:
+		$HurtTimer.stop()
+
+
+func _on_HurtTimer_timeout():
+	hurt_player()
+
+
+func hurt_player():
+	player.hurt(damage)

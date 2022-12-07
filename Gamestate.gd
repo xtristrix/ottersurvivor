@@ -25,7 +25,7 @@ func _process(delta):
 
 func update_gui():
 	get_tree().call_group("GUI", "update_healthbar", max_health, health)
-	get_tree().call_group("GUI", "update_progressbar", next_level, xp)
+	get_tree().call_group("GUI", "update_progressbar", next_level, xp, level)
 	get_tree().call_group("GUI", "update_countdown", $CountdownTimer.time_left)
 
 
@@ -41,6 +41,7 @@ func check_for_level_up():
 	if xp >= next_level:
 		xp -= next_level
 		next_level = int(next_level * 1.1)
+		level += 1
 
 
 func _on_CountdownTimer_timeout():
@@ -53,6 +54,9 @@ func spawn_template_enemy():
 	enemy_spawn_location.offset = randi()
 	enemy.position = enemy_spawn_location.position
 	add_child(enemy)
-	print(enemy.position)
+
+
+func changeHealth(change):
+	health += change
 
 

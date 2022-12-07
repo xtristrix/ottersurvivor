@@ -27,3 +27,7 @@ func get_input():
 	if Input.is_action_pressed("down"):
 		input.y += 1
 	return input
+
+
+func hurt(damage):
+	get_tree().call_group("Gamestate", "changeHealth", -damage)

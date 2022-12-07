@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://gfx/playerotter.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Attacks/Stomp.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -36,5 +35,3 @@ limit_right = 2150
 limit_bottom = 2150
 
 [node name="GUI" parent="Camera2D" instance=ExtResource( 3 )]
-
-[node name="Stomp" parent="." instance=ExtResource( 4 )]
