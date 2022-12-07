@@ -32,8 +32,8 @@ shape = SubResource( 2 )
 current = true
 limit_left = -32
 limit_top = 0
-limit_right = 10016
-limit_bottom = 9952
+limit_right = 2150
+limit_bottom = 2150
 
 [node name="GUI" parent="Camera2D" instance=ExtResource( 3 )]
 
